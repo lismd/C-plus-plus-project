@@ -1,39 +1,4 @@
-#ifndef STRING_H
-#define STRING_H
-/*
- ** HHdr-beg ****************************************************************
- **
- ** Copyright Honeywell Inc
- ** All Rights Reserved
- **
- ** Honeywell Proprietary
- **
- ** Include File name: string.h
- **
- ** Purpose: Provide interfaces for ANSI string functions.
- **
- ** HPrj-beg ****************************************************************
- **
- ** HPrj-end ****************************************************************
- ** HHdr-end ****************************************************************
- */
-#include <ansidefs.h>
 
-/* Include mem.h functions as subset of string.h functions */
-#include <mem.h>
-#include "string.h"
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-/* 
-** Our DLL exports symbols prepended with an underscore ('_').
-** The Microsoft compiler appears to prefer not to prepend underscores, thus for
-** those wishing to use our DLL, we must force underscores for the functions our
-** DLL exports.  If we didn't do this, users of our DLL that choose to compile their
-** code with a Microsoft compiler would suffer unresolved references at link time.
-*/
 #if defined(_MSC_VER) || defined(__GNUC__)
 #ifndef PPC
 #define strlen _strlen
